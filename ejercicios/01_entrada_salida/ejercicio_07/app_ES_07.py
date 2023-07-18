@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Alexis
+apellido:Diaz Zampella
 ---
 Ejercicio: entrada_salida_07
 ---
@@ -50,16 +50,57 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        pass
+        
+        numero_uno_texto = self.txt_operador_a.get()
+        numero_uno_a_numero = int(numero_uno_texto)
+
+        numero_dos_texto = self.txt_operador_b.get()
+        numero_dos_a_numero = int(numero_dos_texto)
+        resultado = numero_uno_a_numero + numero_dos_a_numero
+        resultado_a_texto = str(resultado)
+        mensaje = "El resultado es: " + resultado_a_texto
+        alert(title= "sumador",message=mensaje)
 
     def btn_restar_on_click(self):
-        pass
+        #no olvidarse de self
+        numero_uno_texto = self.txt_operador_a.get()
+        numero_uno_a_numero = int(numero_uno_texto)
+
+        numero_dos_texto = self.txt_operador_b.get()
+        numero_dos_a_numero = int(numero_dos_texto)
+
+        resultado = numero_uno_a_numero - numero_dos_a_numero
+        resultado_a_texto = str(resultado)
+        
+        mensaje = "El resultado es: " + resultado_a_texto
+        alert(title= "sumador",message=mensaje)
 
     def btn_multiplicar_on_click(self):
-        pass
+        numero_uno_texto = self.txt_operador_a.get()
+        numero_uno_a_numero = int(numero_uno_texto)
+
+        numero_dos_texto = self.txt_operador_b.get()
+        numero_dos_a_numero = int(numero_dos_texto)
+
+        resultado = numero_uno_a_numero * numero_dos_a_numero
+        resultado_a_texto = str(resultado)
+
+        mensaje = "El resultado es: " + resultado_a_texto
+        alert(title= "sumador",message=mensaje)
 
     def btn_dividir_on_click(self):
-        pass
+        numero_uno_texto = self.txt_operador_a.get()
+        numero_uno_a_numero = int(numero_uno_texto)
+
+        numero_dos_texto = self.txt_operador_b.get()
+        numero_dos_a_numero = int(numero_dos_texto)
+
+        resultado = numero_uno_a_numero / numero_dos_a_numero
+        resultado_a_texto = str(resultado)
+
+        mensaje = "El resultado es: " + resultado_a_texto
+        alert(title= "sumador",message=mensaje)
+
         
 if __name__ == "__main__":
     app = App()

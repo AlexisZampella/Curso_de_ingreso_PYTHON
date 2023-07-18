@@ -41,9 +41,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        edad = int (self.txt_edad.get())
+        estado_civil_txt = self.combobox_estado_civil.get()
 
-        
+        if edad >=18 and estado_civil_txt == "Soltero":
+#cambio a mayuscula la variale y lo toma. poniendo "Soltero" no saltaba el mensaje. 
+            mensaje = ("Es soltero y no es menor")
+            alert(title="Estado civil y edad", message=mensaje)
+
+
+
         
     
 if __name__ == "__main__":

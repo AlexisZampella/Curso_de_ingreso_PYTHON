@@ -38,8 +38,32 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
-        
+        cantidad_lamparitas = self.combobox_cantidad.get()
+        cantidad_lamparitas = int(cantidad_lamparitas)
+        marca = self.combobox_marca.get()
+        none = 0
+        precio_sin_descuento = 800 * cantidad_lamparitas
+
+        if(cantidad_lamparitas >=6):
+            precio_sin_descuento = 800 * 6
+            porcentaje = 50
+            
+        elif(cantidad_lamparitas == 5):
+            if(marca== "argentinaLuz"):
+                porcentaje = 40
+            else:
+                porcentaje = 30 
+        #              800                -     800             x   0
+        resultado = precio_sin_descuento - precio_sin_descuento * porcentaje /100
+
+        if(resultado> 4000):
+            resultado=resultado - precio_sin_descuento*5/100
+    
+
+        message = "Usted debera pagar" + str(resultado) + " y tuvo un despuesto del :"+str(porcentaje)
+        alert(title="Su compra",message=resultado)
+
+
     
 if __name__ == "__main__":
     app = App()
